@@ -1,7 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Just for fun!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Just for fun! - zhuzhu.org</title>
+        <meta name="keywords" content="zhuzhuor, zhuzhu.org" />
+        <style>
+            html, body, div.wrapper {
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+            }
+
+            div.wrapper {
+                display: table;
+            }
+
+            div.center {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                font-family: Verdana, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, Geneva, Arial, Sans-serif;
+                font-size: 1.5em;
+            }
+
+            a {
+                color: #57068C;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
-    <body>Just for fun!</body>
+    <body>
+        <div class="wrapper">
+            <div class="center">
+                <span id="email"><a onClick="display_email()">Just for fun!</a></span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function Caesar_decrypt(cipher) {
+                var plain = "";
+                for (var i = 0; i < cipher.length; i++)
+                    plain += String.fromCharCode(cipher.charCodeAt(i) - 3);
+
+                return plain;
+            }
+
+            function display_email() {
+                var ciphertext = 'ixqC}kx}kx1ruj';
+                var plaintext = Caesar_decrypt(ciphertext);
+                document.getElementById('email').innerHTML = '<a target="_blank" href="mailto:' + plaintext + '">' + plaintext + '<\/a>';
+            }
+        </script>
+    </body>
 </html>
+
